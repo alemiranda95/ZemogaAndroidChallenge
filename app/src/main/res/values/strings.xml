@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Zemoga</string>
+    <string name="author_name">Created by Alejandro Miranda</string>
+
+    <string name="title_posts">Posts</string>
+    <string name="title_favorites">Favorites</string>
+
+    <!-- Generic Errors -->
+    <string name="no_internet_error">No internet connection detected. Please reconnect to try again.</string>
+    <string name="retry_error_button">Retry</string>
+
+    <!-- Posts -->
+    <string name="pull_down_label">Pull down to load posts</string>
+    <string name="delete_all_label">Delete All</string>
+    <string name="posts_deleted_message">Posts Deleted</string>
+
+    <!-- Favorites -->
+    <string name="no_favorites_label">No favorite posts</string>
+    <string name="delete_favorites_label">Unfavorite All</string>
+    <string name="favorites_deleted_message">Posts unfavorited</string>
+
+    <!-- Post Info -->
+    <string name="post_info_description_label">Description</string>
+    <string name="post_info_user_label">User</string>
+    <string name="post_info_user_name_label">Name:</string>
+    <string name="post_info_user_email_label">Name:</string>
+    <string name="post_info_user_phone_label">Phone:</string>
+    <string name="post_info_user_website_label">Website:</string>
+    <string name="post_info_show_comments_label">Comments</string>
+    <string name="post_favorited">Post favorited!</string>
+    <string name="post_unfavorited">Post unfavorited!</string>
+    <string name="delete_label">Delete</string>
+    <string name="post_deleted_message">Post deleted</string>
+
+</resources>

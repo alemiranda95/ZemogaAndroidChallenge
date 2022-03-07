@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="postInfoVM"
+            type="py.com.alemiranda95.zemoga.ui.presentation.main.postinfo.PostInfoViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        bind:context=".ui.presentation.main.postinfo.PostInfoInfoFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/view_margin_large">
+
+                <TextView
+                    android:id="@+id/textview_post_info_description_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/unread_text_color"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text_size_medium"
+                    android:text="@string/post_info_description_label"
+                    android:layout_marginTop="@dimen/view_margin_large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:text='@{postInfoVM.viewState.post.body ?? ""}'                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_post_info_description_title" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/unread_text_color"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text_size_medium"
+                    android:text="@string/post_info_user_label"
+                    android:layout_marginTop="@dimen/view_margin_large"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_post_info_description" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_name_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:text="@string/post_info_user_name_label"
+                    android:layout_marginTop="@dimen/view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_post_info_user_title" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_email_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:text="@string/post_info_user_email_label"
+                    android:layout_marginTop="@dimen/view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_post_info_user_name_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_phone_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:text="@string/post_info_user_phone_label"
+                    android:layout_marginTop="@dimen/view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_post_info_user_email_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_website_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:text="@string/post_info_user_website_label"
+                    android:layout_marginTop="@dimen/view_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_post_info_user_phone_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_color"
+                    android:text='@{postInfoVM.viewState.post.user.name ?? ""}'
+                    android:layout_marginLeft="@dimen/view_margin"
+                    app:layout_constraintLeft_toRightOf="@id/textview_post_info_user_name_subtitle"
+                    app:layout_constraintBottom_toBottomOf="@id/textview_post_info_user_name_subtitle"
+                    app:layout_constraintTop_toTopOf="@id/textview_post_info_user_name_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_color"
+                    android:text='@{postInfoVM.viewState.post.user.email ?? ""}'
+                    android:layout_marginLeft="@dimen/view_margin"
+                    app:layout_constraintLeft_toRightOf="@id/textview_post_info_user_email_subtitle"
+                    app:layout_constraintBottom_toBottomOf="@id/textview_post_info_user_email_subtitle"
+                    app:layout_constraintTop_toTopOf="@id/textview_post_info_user_email_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_color"
+                    android:text='@{postInfoVM.viewState.post.user.phone ?? ""}'
+                    android:layout_marginLeft="@dimen/view_margin"
+                    app:layout_constraintLeft_toRightOf="@id/textview_post_info_user_phone_subtitle"
+                    app:layout_constraintBottom_toBottomOf="@id/textview_post_info_user_phone_subtitle"
+                    app:layout_constraintTop_toTopOf="@id/textview_post_info_user_phone_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_user_website"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_color"
+                    android:text='@{postInfoVM.viewState.post.user.website ?? ""}'
+                    android:layout_marginLeft="@dimen/view_margin"
+                    app:layout_constraintLeft_toRightOf="@id/textview_post_info_user_website_subtitle"
+                    app:layout_constraintBottom_toBottomOf="@id/textview_post_info_user_website_subtitle"
+                    app:layout_constraintTop_toTopOf="@id/textview_post_info_user_website_subtitle" />
+
+                <TextView
+                    android:id="@+id/textview_post_info_comments_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/unread_text_color"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text_size_medium"
+                    android:text="@string/post_info_show_comments_label"
+                    android:layout_marginTop="@dimen/view_margin_large"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_post_info_user_website" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_post_info_comments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:paddingBottom="?android:actionBarSize"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/textview_post_info_comments_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@id/appbar_post_info"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_post_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:expandedTitleTextAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_post_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorPrimaryVariant"
+            android:src="@drawable/ic_baseline_star_border_24"
+            app:tint="@color/favorite_cardview_color"
+            app:layout_anchor="@+id/appbar_post_info"
+            app:layout_anchorGravity="bottom|right|end" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_post_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:backgroundTint="@color/colorPrimaryVariant"
+            android:text="@string/delete_label"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom|center"
+            app:icon="@drawable/ic_baseline_delete_24"
+            app:iconTint="@color/white"/>
+
+        <ProgressBar
+            android:id="@+id/progress_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorPrimary"
+            android:layout_gravity="center"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

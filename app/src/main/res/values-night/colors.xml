@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryVariant">#173518</color>
+    <color name="colorPrimary">#1A871B</color>
+    <color name="unread_text_color">#FFFF</color>
+    <color name="text_color">#AFAFAF</color>
+    <color name="cardview_color">#595959</color>
+    <color name="favorite_cardview_color">#FFA701</color>
+</resources>
