@@ -1,8 +1,8 @@
 # Zemoga Android Challenge
 
-![1]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/1.png" width="277" height="600">
-![2]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/2.png" width="277" height="600">
-![3]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/3.png" width="277" height="600">
+![1]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/1.jpg" width="184" height="400">
+![2]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/2.jpg" width="184" height="400">
+![3]<img src="https://github.com/alemiranda95/ZemogaAndroidChallenge/tree/master/screenshots/3.jpg" width="184" height="400">
 
 ## About
 This app is part of the Zemoga employment selection process. It consists in an app that retrieves and displays posts and their information from a public REST api.
